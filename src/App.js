@@ -1,11 +1,16 @@
 import React, { Fragment } from "react";
 import Router from "./Router";
+import { Provider } from "react-redux";
+import { init } from "./redux/reducers/index";
 
 const App = () => {
+  const store = init();
   return (
-    <Fragment>
-      <Router />
-    </Fragment>
+    <Provider store={store}>
+      <Fragment>
+        <Router />
+      </Fragment>
+    </Provider>
   );
 };
 

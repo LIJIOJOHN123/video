@@ -77,23 +77,29 @@ export default function DesktopBar() {
             </Link>
           </Button>
           <Button color="inherit">
-            <Link to="/s" className={classes.link}>
-              Trending
+            <Link to="/comments" className={classes.link}>
+              Comments
             </Link>
           </Button>
           <Button color="inherit">
+            <Link to="/channels" className={classes.link}>
+              Channels
+            </Link>
+          </Button>
+
+          <Button color="inherit">
             <Link to="/f" className={classes.link}>
-              Categories
+              Advertise with us
             </Link>
           </Button>
           <Button color="inherit">
             <Link to="/d" className={classes.link}>
-              Dashboard
+              Work from home
             </Link>
           </Button>
           <Button color="inherit">
             <Link to="/e" className={classes.link}>
-              Photos
+              About us
             </Link>
           </Button>
           <div className={classes.search}>
