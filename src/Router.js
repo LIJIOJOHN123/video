@@ -6,7 +6,9 @@ import Register from "./components/auth/Register";
 import {
   ChannelPage,
   CommentPage,
-  HomePage
+  HomePage,
+  ArticlePage,
+  SingleArticlePage
 } from "./components/Loading/Loadable";
 
 const Router = () => {
@@ -20,6 +22,8 @@ const Router = () => {
           <Route path="/register" exact component={Register} />
           <Route path="/channels" exact component={ChannelPage} />
           <Route path="/comments" exact component={CommentPage} />
+          <Route path="/articles" exact component={ArticlePage} />
+          <Route path="/articles/:id" exact component={SingleArticlePage} />
         </Switch>
       </Fragment>
     </BrowserRouter>

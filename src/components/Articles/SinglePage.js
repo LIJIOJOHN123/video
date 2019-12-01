@@ -12,55 +12,59 @@ import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   card: {
-    margin: 10
+    margin: 10,
+    marginLeft: "15%",
+    marginRight: "35%"
   },
   media: {
     height: 0,
-    paddingTop: "59%" // 16:9
+    paddingTop: "40%" // 16:9
   },
   avatar: {
     backgroundColor: red[500]
   },
-  link: {
-    textDecoration: "none"
+  img: {
+    height: 400,
+    overflow: "hidden",
+    display: "block",
+    width: "100%"
   }
 }));
 
-export default function RecipeReviewCard({ single }) {
+export default function ArticleSinglePage() {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
-      <Link to={`/articles/${single}`} className={classes.link}>
-        <CardMedia
-          className={classes.media}
-          image="https://c.ndtvimg.com/2019-11/aft8dk0o_virat-kohli_625x300_16_November_19.jpg?output-quality=70&output-format=webp&downsize=555"
-          title="Paella dish"
-        />
-        <CardHeader
-          avatar={
-            <Avatar aria-label="recipe" className={classes.avatar}>
-              R
-            </Avatar>
-          }
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title="Shrimp and Chorizo Paella"
-          subheader="September 14, 2016"
-        />
-        <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p">
-            "dalfadlkadlka dalkdfaj fdalk dfajlkdf akdfjla klfdajfdalj fdakl
-            adlfkj alfkjda flkdajflkdajlkfda"
-          </Typography>
-        </CardContent>
-      </Link>
+      <CardHeader
+        avatar={
+          <Avatar aria-label="recipe" className={classes.avatar}>
+            L
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title="Lijo John"
+        subheader="September 14, 2016"
+      />
+      <Typography variant="h4">
+        "Root leads England with ton on rain-marred day"
+      </Typography>
+      <img
+        className={classes.img}
+        src="https://www.cricbuzz.com/a/img/v1/595x396/i1/c183457/root-scored-a-test-century-aft.jpg"
+      />
+
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          dafkafdlkjlda
+        </Typography>
+      </CardContent>
       <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />

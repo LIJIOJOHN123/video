@@ -12,8 +12,6 @@ import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
-import LetterAvatars from "./Avatar";
-import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -23,17 +21,11 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: red[500]
   },
   img: {
-    height: "40%",
+    height: "10%",
     width: "50%",
     overflow: "hidden",
     display: "block",
     width: "100%"
-  },
-  margin: {
-    marginTop: "-10%"
-  },
-  link: {
-    textDecoration: "none"
   }
 }));
 
@@ -41,36 +33,31 @@ export default function RecipeReviewCard({ single }) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
-      <Link to={`comments/${single.id}`} className={classes.link}>
-        <img
-          className={classes.img}
-          src="https://img-mm.manoramaonline.com/content/dam/mm/mo/news/just-in/images/2019/11/1/keith-vaz.jpg"
-        />
+      <img
+        className={classes.img}
+        src="https://img-mm.manoramaonline.com/content/dam/mm/mo/news/just-in/images/2019/11/1/keith-vaz.jpg"
+      />
 
-        <CardHeader
-          className={classes.margin}
-          avatar={<LetterAvatars />}
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title="mathrubhumi"
-          subheader="September 14, 2016"
-        />
-        <CardContent className={classes.margin}>
-          <Typography variant="body2" color="textSecondary" component="p">
-            DALFKJF ADLF ALKJF ALKFJ ALDKJFAL KDFJALK
-          </Typography>
-        </CardContent>
-      </Link>
-      <CardActions className={classes.margin}>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
+      <CardHeader
+        avatar={
+          <Avatar aria-label="recipe" className={classes.avatar}>
+            R
+          </Avatar>
+        }
+        action={
+          <IconButton aria-label="settings">
+            <MoreVertIcon />
+          </IconButton>
+        }
+        title="Shrimp and Chorizo Paella"
+        subheader="September 14, 2016"
+      />
+      <CardContent>
+        <Typography variant="body2" color="textSecondary" component="p">
+          {single.body}
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>

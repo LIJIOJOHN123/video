@@ -1,21 +1,29 @@
 import React, { Fragment } from "react";
 import { Grid, TextField, Button, Paper, Typography } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
+import LetterAvatars from "./Avatar";
+import { Link } from "react-router-dom";
 const userStyle = makeStyles(theme => ({
   outline: {
     padding: 10
   },
   center: {
     paddingLeft: "30%"
+  },
+  centerSecond: {
+    paddingLeft: "15%"
+  },
+  link: {
+    textDecoration: "none"
   }
 }));
 const Register = () => {
   const [formData, setFormData] = React.useState({
     name: "",
-    userName: "",
+    email: "",
     password: ""
   });
-  const { name, userName, password } = formData;
+  const { name, email, password } = formData;
   const handleChanges = name => e => {
     setFormData({ ...formData, [name]: e.target.value });
   };
@@ -32,6 +40,9 @@ const Register = () => {
             <Typography variant="h4" className={classes.center}>
               Register
             </Typography>
+            <div className={classes.centerSecond}>
+              <LetterAvatars />
+            </div>
             <TextField
               required
               id="filled-required"
@@ -46,9 +57,9 @@ const Register = () => {
             <TextField
               required
               id="outlined-required"
-              onChange={handleChanges("userName")}
-              value={userName}
-              label="User Name"
+              onChange={handleChanges("email")}
+              value={email}
+              label="Email"
               fullWidth
               margin="normal"
               variant="outlined"
@@ -73,6 +84,32 @@ const Register = () => {
                 Register
               </Button>
             </div>
+            <br />
+            <div>
+              <Typography variant="p">
+                Particiation Agreeemnt Private Statement FAQ Help
+              </Typography>
+            </div>
+            <br />
+            <Typography>Do you have alread account?</Typography>
+            <br />
+            <div className={classes.center}>
+              <div>
+                <Button
+                  variant="contained"
+                  color="inherit"
+                  onClick={handleSubmit}
+                >
+                  <Link to="/login" className={classes.link}>
+                    login
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <br />
+            <Typography variant="p">
+              @Crowdsourcing Online Services Privage Limited 2019
+            </Typography>
           </Paper>
         </Grid>
       </Grid>

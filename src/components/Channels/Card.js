@@ -12,17 +12,28 @@ import { red } from "@material-ui/core/colors";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ShareIcon from "@material-ui/icons/Share";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
+import LetterAvatars from "./Avatar";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   card: {
     margin: 10
   },
-  media: {
-    height: 0,
-    paddingTop: "59%" // 16:9
-  },
   avatar: {
     backgroundColor: red[500]
+  },
+  img: {
+    height: "40%",
+    width: "50%",
+    overflow: "hidden",
+    display: "block",
+    width: "100%"
+  },
+  margin: {
+    marginTop: "-10%"
+  },
+  link: {
+    textDecoration: "none"
   }
 }));
 
@@ -30,31 +41,36 @@ export default function RecipeReviewCard({ single }) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
-      <CardMedia
-        className={classes.media}
-        image="https://img-mm.manoramaonline.com/content/dam/mm/mo/sports/cricket/images/2019/11/25/sanju-ganguly-harbhajan.jpg"
-        title="Paella dish"
-      />
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
-      />
-      <CardContent>
-        <Typography variant="body2" color="textSecondary" component="p">
-          {single.body}
-        </Typography>
-      </CardContent>
-      <CardActions disableSpacing>
+      <Link to={`channels/${single.id}`} className={classes.link}>
+        <img
+          className={classes.img}
+          src="https://img-mm.manoramaonline.com/content/dam/mm/mo/movies/movie-news/2019/11/30/mamankamgopakumar.jpg"
+        />
+
+        <CardHeader
+          className={classes.margin}
+          avatar={<LetterAvatars />}
+          action={
+            <IconButton aria-label="settings">
+              <MoreVertIcon />
+            </IconButton>
+          }
+          title="mathrubhumi"
+          subheader="September 14, 2016"
+        />
+        <CardContent className={classes.margin}>
+          <Typography variant="body2" color="textSecondary" component="p">
+            DALFKJF ADLF ALKJF ALKFJ ALDKJFAL KDFJALK
+          </Typography>
+        </CardContent>
+      </Link>
+      <CardActions className={classes.margin}>
+        <IconButton aria-label="add to favorites">
+          <FavoriteIcon />
+        </IconButton>
+        <IconButton aria-label="share">
+          <ShareIcon />
+        </IconButton>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>

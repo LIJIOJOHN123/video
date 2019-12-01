@@ -4,8 +4,9 @@ import { connect } from "react-redux";
 import { fetchVideo } from "../../redux/actions/index";
 import Card from "./Card";
 import InfiniteScroll from "react-infinite-scroll-component";
+import FullWidthTabs from "./SubHeader";
 
-const CommentList = props => {
+const ArticleList = props => {
   React.useEffect(() => {
     props.fetchVideo();
   }, []);
@@ -26,4 +27,4 @@ const mapStateToProps = state => {
     videos: state.videos
   };
 };
-export default connect(mapStateToProps, { fetchVideo })(CommentList);
+export default connect(mapStateToProps, { fetchVideo })(ArticleList);

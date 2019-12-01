@@ -14,3 +14,13 @@ export const HomePage = Loadable({
   loader: () => import("../Home/List"),
   loading: Loading
 });
+
+export const ArticlePage = Loadable({
+  loader: () => import("../Articles/List"),
+  loading: Loading
+});
+
+export const SingleArticlePage = Loadable({
+  loader: () => import("../Articles/SinglePage"),
+  loading: Loading
+});

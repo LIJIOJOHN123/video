@@ -7,6 +7,8 @@ import {
   TextField,
   Button
 } from "@material-ui/core";
+import LetterAvatars from "./Avatar";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   outline: {
@@ -14,17 +16,23 @@ const useStyles = makeStyles(theme => ({
   },
   center: {
     paddingLeft: "30%"
+  },
+  centerSecond: {
+    paddingLeft: "15%"
+  },
+  link: {
+    textDecoration: "none"
   }
 }));
 
 const Login = () => {
   const [formData, setFormData] = React.useState({
-    userName: "",
+    email: "",
     password: ""
   });
-  const { userName, password } = formData;
-  const handleChange = userName => e => {
-    setFormData({ ...formData, [userName]: e.target.value });
+  const { email, password } = formData;
+  const handleChange = email => e => {
+    setFormData({ ...formData, [email]: e.target.value });
   };
   const handleSubmit = () => {
     console.log(formData);
@@ -40,12 +48,16 @@ const Login = () => {
             <Typography variant="h4" className={classes.center}>
               Login
             </Typography>
+            <div className={classes.centerSecond}>
+              <LetterAvatars />
+            </div>
+
             <TextField
               required
               id="filled-required"
-              value={userName}
-              onChange={handleChange("userName")}
-              label="User Name"
+              value={email}
+              onChange={handleChange("email")}
+              label="Email"
               margin="normal"
               variant="outlined"
               fullWidth
@@ -61,15 +73,42 @@ const Login = () => {
               variant="outlined"
               fullWidth
             />
+            <br />
             <div className={classes.center}>
-              <Button
-                variant="contained"
-                color="primary"
-                onClick={handleSubmit}
-              >
-                Login
-              </Button>
+              <div>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  onClick={handleSubmit}
+                >
+                  Login
+                </Button>
+              </div>
             </div>
+            <br />
+            <div>
+              <Typography variant="p">
+                Particiation Agreeemnt Private Statement FAQ Help
+              </Typography>
+            </div>
+            <br />
+            <div className={classes.centerSecond}>
+              <div>
+                <Button
+                  variant="contained"
+                  color="inherit"
+                  onClick={handleSubmit}
+                >
+                  <Link to="/register" className={classes.link}>
+                    Create new Account
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <br />
+            <Typography variant="p">
+              @Crowdsourcing Online Services Privage Limited 2019
+            </Typography>
           </Paper>
         </Grid>
       </Grid>

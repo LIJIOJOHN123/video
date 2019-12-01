@@ -19,7 +19,6 @@ const useStyle = makeStyles(theme => ({
 }));
 const Menu = () => {
   const classes = useStyle();
-  console.log(classes);
   return (
     <Fragment>
       <div className={classes.sectionDesktop}>
