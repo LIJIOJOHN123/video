@@ -17,7 +17,7 @@ import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
   card: {
-    margin: 10
+    margin: 5
   },
   avatar: {
     backgroundColor: red[500]
@@ -37,47 +37,21 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function RecipeReviewCard({ single }) {
+export default function SingelCard({ single }) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
-      <Link to={`channels/${single.id}`} className={classes.link}>
+      <Link to={`/articles/${single}`} className={classes.link}>
         <img
           className={classes.img}
           src="https://www.cricbuzz.com/a/img/v1/980x654/i1/c180150/steve-smith-poured-cold-water.jpg"
         />
-
-        <CardHeader
-          className={classes.margin}
-          avatar={<LetterAvatars />}
-          action={
-            <IconButton aria-label="settings">
-              <MoreVertIcon />
-            </IconButton>
-          }
-          title="mathrubhumi"
-          subheader="September 14, 2016"
-        />
         <CardContent className={classes.margin}>
           <Typography variant="body2" color="textSecondary" component="p">
-            DALFKJF ADLF ALKJF ALKFJ ALDKJFAL KDFJALK
+            DALFKJF ADLF
           </Typography>
         </CardContent>
       </Link>
-      <CardActions className={classes.margin}>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-        <IconButton aria-label="add to favorites">
-          <FavoriteIcon />
-        </IconButton>
-        <IconButton aria-label="share">
-          <ShareIcon />
-        </IconButton>
-      </CardActions>
     </Card>
   );
 }
