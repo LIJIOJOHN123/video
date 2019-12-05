@@ -16,11 +16,15 @@ export const HomePage = Loadable({
 });
 
 export const ArticlePage = Loadable({
-  loader: () => import("../Articles/List"),
+  loader: () => import("../Articles/index"),
   loading: Loading
 });
 
 export const SingleArticlePage = Loadable({
-  loader: () => import("../Articles/SinglePage"),
+  loader: () => import("../Articles/Article Details/index"),
+  loading: Loading
+});
+export const SingleChannelPage = Loadable({
+  loader: () => import("../Channels/ChannelDetails/index"),
   loading: Loading
 });

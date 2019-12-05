@@ -8,7 +8,8 @@ import {
   CommentPage,
   HomePage,
   ArticlePage,
-  SingleArticlePage
+  SingleArticlePage,
+  SingleChannelPage
 } from "./components/Loading/Loadable";
 
 const Router = () => {
@@ -24,6 +25,7 @@ const Router = () => {
           <Route path="/comments" exact component={CommentPage} />
           <Route path="/articles" exact component={ArticlePage} />
           <Route path="/articles/:id" exact component={SingleArticlePage} />
+          <Route path="/channels/:id" exact component={SingleChannelPage} />
         </Switch>
       </Fragment>
     </BrowserRouter>

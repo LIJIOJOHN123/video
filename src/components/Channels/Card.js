@@ -41,7 +41,7 @@ export default function RecipeReviewCard({ single }) {
   const classes = useStyles();
   return (
     <Card className={classes.card}>
-      <Link to={`channels/${single.id}`} className={classes.link}>
+      <Link to={`/channels/${single.id}`} className={classes.link}>
         <img
           className={classes.img}
           src="https://img-mm.manoramaonline.com/content/dam/mm/mo/movies/movie-news/2019/11/30/mamankamgopakumar.jpg"
